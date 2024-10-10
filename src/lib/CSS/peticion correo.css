@@ -112,6 +112,7 @@ body {
   
   /* El boton de Volver */
 .back {
+    position: absolute;
     display: flex;
     height: 3em;
     width: 100px;
@@ -124,7 +125,6 @@ body {
     cursor: pointer;
     border: none;
     background: #fff;
-    position: absolute;
     top: 10px;
     left: 10px;
    }

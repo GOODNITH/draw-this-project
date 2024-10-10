@@ -193,12 +193,7 @@ button {
     box-shadow: 0px 0px 0 0 #0e285d;
   }
 
-  #noResultsMessage {
-    display: none;
-}
-
-
-  #noResultsMessage p {
+  #noResults p {
     display: flex; 
     text-align: center; 
     color: rgb(0, 0, 0); 
@@ -207,7 +202,7 @@ button {
     justify-content: center;
   }
 
-  #noResultsMessage img {
+  #noResults img {
     margin-bottom: 10%;
     margin-left: 34%;
     animation: animate 1s linear alternate-reverse infinite;

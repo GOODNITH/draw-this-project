@@ -53,7 +53,7 @@ body {
 .container header{
   height: 150px;
   width: 150px;
-  background-image: url('../IMAGES/image.gif');
+  background-image: url('$lib/IMAGES/image.gif');
   background-size: cover;
   background-position: center;
 }
@@ -107,6 +107,8 @@ form .input-field input::-webkit-outer-spin-button {
 }
 
 .enviar {
+  opacity: 0.5; /* Opacidad baja cuando no está activo */
+  cursor: not-allowed;
   margin: 28px;
   width: 100%;
   border: 2px solid black;
@@ -116,7 +118,6 @@ form .input-field input::-webkit-outer-spin-button {
   font-weight: bold;
   padding: 15px 10px;
   border-radius: 2em;
-  cursor: pointer;
   transition: 0.1s ease;
   box-shadow: 1px 5px 0 0 #0e285d;
   border-width: 2px;
@@ -124,9 +125,14 @@ form .input-field input::-webkit-outer-spin-button {
   letter-spacing: 1px;
 }
 
-.enviar:hover {
+.enviar.active:hover {
   transform: translateY(-4px);
   box-shadow: 1px 9px 0 0 #0e285d;
+}
+
+.enviar.active {
+  opacity: 1; 
+  cursor: pointer;
 }
 
 /* El boton de Volver */

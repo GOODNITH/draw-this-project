@@ -1,26 +1,22 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import '$lib/CSS/landing page.css';
-	import Uno from '$lib/IMAGES/17b68c2b-ad82-46be-821d-7373ceeecaf5.jpg';
-	import Dos from '$lib/IMAGES/ee6d8afd-3406-4228-b285-de7b0ea8c97d.jpg';
-	import Tres from '$lib/IMAGES/calle.jpg';
-	import Cuatro from '$lib/IMAGES/Pixel Art.jpg';
-	import Cinco from '$lib/IMAGES/Arte.jpg';
-	import logo from '$lib/IMAGES/IMG-20231013-WA0009.jpg';
-	import logo1 from '$lib/IMAGES/logo-1.png';
-	import logo2 from '$lib/IMAGES/logo-2.png';
-	import logo3 from '$lib/IMAGES/logo-3.png';
-	import number1 from '$lib/IMAGES/number-1.jpg';
-	import number2 from '$lib/IMAGES/number-2.jpg';
-	import number3 from '$lib/IMAGES/number-3.jpg';
-	import image1 from '$lib/IMAGES/Leccion.jpg';
-	import image2 from '$lib/IMAGES/dibujando.jpg';
-	import image3 from '$lib/IMAGES/material.jpg';
-	import footer from '$lib/IMAGES/1697232378791.png';
+	import {
+		logo,
+		logo1,
+		logo2,
+		logo3,
+		number1,
+		number2,
+		number3,
+		image1,
+		image2,
+		image3,
+		footer
+	} from '$lib/IMAGES/todas';
+	import { slides } from '$lib/info/info';
 
-	// CARRUSEL DE IMAGENES
-
-	let currentSlide = 0;
+	let currentSlide = 3;
 
 	onMount(() => {
 		const interval = setInterval(() => {
@@ -51,10 +47,12 @@
 	<nav>
 		<img src={logo} alt="" class="logo" />
 		<ul class="menu">
-			<li><a href="/cursos">Cursos</a></li>
-			<li><a href="../Contacto/+page.svelte">Contacto</a></li>
-			<li><a href="/acerca-de">Acerca de</a></li>
-			<li><a href="#In Process">Ajustes</a></li>
+			<li><a href="/cursos" data-sveltekit-reload data-sveltekit-preload-data="tap">Cursos</a></li>
+			<li><a href="/contacto" data-sveltekit-preload-data="tap">Contacto</a></li>
+			<li>
+				<a href="/acerca-de" data-sveltekit-reload data-sveltekit-preload-data="tap">Acerca de</a>
+			</li>
+			<li><a href="#In Process" data-sveltekit-preload-data="tap">Ajustes</a></li>
 			<li><button on:click={togglePopup2} class="custom-button">Volver</button></li>
 		</ul>
 	</nav>
@@ -64,18 +62,18 @@
 			<div class="popup-content">
 				<div class="header-card">
 					<span
-					role="button"
-					class="close"
-					on:click={togglePopup2}
-					tabindex="0"
-					on:keypress={(e) => e.key === 'Enter' && togglePopup2()}>&times;</span
-				>
+						role="button"
+						class="close"
+						on:click={togglePopup2}
+						tabindex="0"
+						on:keypress={(e) => e.key === 'Enter' && togglePopup2()}>&times;</span
+					>
 					<div class="content-card">
 						<span class="title-card">¿Estás seguro de Salir?</span>
 						<p class="message">Si es así, ¡esperamos que vuelvas <br /> pronto!</p>
 					</div>
 					<div class="actions">
-						<a href="/">
+						<a href="/" data-sveltekit-reload data-sveltekit-preload-data="tap">
 							<button type="button" class="enviar">Salir</button>
 						</a>
 					</div>
@@ -93,7 +91,7 @@
 			<p>¡La Página que sacará tus dotes<br /> artísticos y los pondra a prueba!</p>
 			<br />
 			<br />
-			<a href="../HTML/cursos.html">
+			<a href="/cursos" data-sveltekit-reload data-sveltekit-preload-data="tap">
 				<button type="button" class="enviar-2">Ingresa a los Cursos</button>
 			</a>
 		</div>
@@ -104,25 +102,11 @@
 			<input type="radio" name="slider" id="s4" checked={currentSlide === 3} />
 			<input type="radio" name="slider" id="s5" checked={currentSlide === 4} />
 
-			<label for="s1" id="slide1">
-				<img src={Uno} alt="" />
-			</label>
-
-			<label for="s2" id="slide2">
-				<img src={Dos} alt="" />
-			</label>
-
-			<label for="s3" id="slide3">
-				<img src={Tres} alt="" />
-			</label>
-
-			<label for="s4" id="slide4">
-				<img src={Cuatro} alt="" />
-			</label>
-
-			<label for="s5" id="slide5">
-				<img src={Cinco} alt="" />
-			</label>
+			{#each slides as slide}
+				<label for={slide.id} id={`slide${slide.id[1]}`}>
+					<img src={slide.image} alt="Slide" />
+				</label>
+			{/each}
 		</div>
 	</div>
 </div>
@@ -255,14 +239,13 @@
 		</div>
 	</section>
 </main>
+
 <footer>
 	<div id="footer">
 		<div class="contenedor">
 			<div class="footer-texto">
 				<p>Todos los derechos reservados a:</p>
-				<img src={footer} alt="" />
-				<br />
-				<br />
+				<img src={footer} alt="Footer logo" />
 			</div>
 		</div>
 	</div>

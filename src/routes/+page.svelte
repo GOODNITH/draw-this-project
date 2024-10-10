@@ -1,72 +1,52 @@
 <script lang="ts">
-	import "$lib/CSS/inicio.css";
+	import { goto } from '$app/navigation';
+	import '$lib/CSS/inicio.css';
 	import logo from '$lib/IMAGES/IMG-20231013-WA0009.jpg';
-	import { onMount } from 'svelte';
 
-	// TARJETA DEL POPUP
 	let isPopupVisible1 = false;
 	let Terms = false;
+	let rightPanelActive = false;
 
-	// Función para alternar la visibilidad del popup
+	let passwordInput1: HTMLInputElement;
+	let passwordInput2: HTMLInputElement;
+	let passwordType1 = 'password';
+	let passwordType2 = 'password';
+
 	function togglePopup1() {
 		isPopupVisible1 = !isPopupVisible1;
-
 		if (!isPopupVisible1) {
 			Terms = true;
 		}
 	}
 
-	// CAMBIO DE INICIO A REGISTRO
-	let container: HTMLElement;
-
-	// Función para cambiar al panel de registro
 	function register() {
-		container.classList.add('right-panel-active');
+		rightPanelActive = true;
 	}
 
-	// Función para volver al panel de inicio de sesión
 	function login() {
-		container.classList.remove('right-panel-active');
+		rightPanelActive = false;
 	}
 
-	// Función para alternar la visibilidad de la contraseña
-	const togglePassword = (passwordInput: HTMLInputElement, eyeIcon: HTMLElement) => {
-		passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
-		eyeIcon.classList.toggle('fa-eye-slash', passwordInput.type === 'password');
-		eyeIcon.classList.toggle('fa-eye', passwordInput.type === 'text');
-	};
-
-	// Inicialización de eventos en el montaje del componente
-	onMount(() => {
-		// Obtener el contenedor
-		container = document.getElementById('container') as HTMLElement;
-
-		// Obtener los inputs y iconos de contraseña
-		const passwordInput1 = document.getElementById('passwordInput1') as HTMLInputElement;
-		const eyeIcon1 = document.getElementById('togglePassword1') as HTMLElement;
-		eyeIcon1.addEventListener('click', () => togglePassword(passwordInput1, eyeIcon1));
-
-		const passwordInput2 = document.getElementById('passwordInput2') as HTMLInputElement;
-		const eyeIcon2 = document.getElementById('togglePassword2') as HTMLElement;
-		eyeIcon2.addEventListener('click', () => togglePassword(passwordInput2, eyeIcon2));
-	});
-
+	function togglePassword(inputNumber: number) {
+		if (inputNumber === 1) {
+			passwordType1 = passwordType1 === 'password' ? 'text' : 'password';
+		} else if (inputNumber === 2) {
+			passwordType2 = passwordType2 === 'password' ? 'text' : 'password';
+		}
+	}
 </script>
 
 <svelte:head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Bienvenido a Draw This</title>
 	<link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
 	<link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" />
-	<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </svelte:head>
 
-<div id="container" class="container">
+<div class="container" class:right-panel-active={rightPanelActive}>
 	<div class="form-container login-container">
 		<img src={logo} alt="" />
-		<form action="/landing-page">
+		<form method="post">
 			<h1>Inicia Sesión</h1>
 			<div class="input-box">
 				<label class="input-label" for="emailInput">Correo Electrónico</label>
@@ -77,7 +57,8 @@
 			<div class="input-box">
 				<label class="input-label" for="passwordInput1">Contraseña</label>
 				<input
-					type="password"
+					bind:this={passwordInput1}
+					type={passwordType1}
 					name="password"
 					placeholder="Password123"
 					required
@@ -85,7 +66,13 @@
 					maxlength="12"
 					id="passwordInput1"
 				/>
-				<i class="far fa-eye-slash" id="togglePassword1"></i>
+				<button
+					type="button"
+					class={passwordType1 === 'password' ? 'far fa-eye-slash' : 'far fa-eye'}
+					on:click={() => togglePassword(1)}
+					aria-label="Toggle password visibility"
+					on:keypress={(e) => e.key === 'Enter' && togglePassword(1)}
+				></button>
 			</div>
 			<div class="content">
 				<div class="checkbox">
@@ -93,7 +80,7 @@
 					<label for="checkbox">Recuerdame</label>
 				</div>
 				<div class="pass-link">
-					<a href="../HTML/peticion correo.html">Olvidaste tu Contraseña?</a>
+					<a href="/peticion-correo" data-sveltekit-reload data-sveltekit-preload-data="tap">Olvidaste tu Contraseña?</a>
 				</div>
 			</div>
 			<button class="send">Inicio</button>
@@ -107,7 +94,7 @@
 
 	<div class="form-container register-container">
 		<img src={logo} alt="" />
-		<form action="/landing-page">
+		<form method="post">
 			<h1>Registrate</h1>
 			<div class="input-box">
 				<label class="input-label" for="usernameInput">Usuario</label>
@@ -138,7 +125,8 @@
 			<div class="input-box">
 				<label class="input-label" for="registerPasswordInput">Contraseña</label>
 				<input
-					type="password"
+					bind:this={passwordInput2}
+					type={passwordType2}
 					name="register_password"
 					placeholder="Password123"
 					required
@@ -146,7 +134,13 @@
 					maxlength="12"
 					id="registerPasswordInput"
 				/>
-				<i class="far fa-eye-slash" id="togglePassword2"></i>
+				<button
+					type="button"
+					class={passwordType2 === 'password' ? 'far fa-eye-slash' : 'far fa-eye'}
+					on:click={() => togglePassword(2)}
+					aria-label="Toggle password visibility"
+					on:keypress={(e) => e.key === 'Enter' && togglePassword(2)}
+				></button>
 			</div>
 
 			<div class="terms-checkbox">
@@ -166,16 +160,16 @@
 			<div class="overlay-panel overlay-left">
 				<h1 class="title">Bienvenido a <br /> Draw This</h1>
 				<p>Sí ya tienes una cuenta, inicia sesión aquí</p>
-				<button class="ghost" on:click={login}
-					>Inicia
+				<button class="ghost" on:click={login}>
+					Inicia
 					<i class="lni lni-arrow-left login"></i>
 				</button>
 			</div>
 			<div class="overlay-panel overlay-right">
 				<h1 class="title">Inicia tu cuenta <br /> de Draw This</h1>
 				<p>Sí no tienes una cuenta, regístrate aquí</p>
-				<button class="ghost" on:click={register}
-					>Registrarse
+				<button class="ghost" on:click={register}>
+					Registrarse
 					<i class="lni lni-arrow-right register"></i>
 				</button>
 			</div>
@@ -184,7 +178,7 @@
 </div>
 
 {#if isPopupVisible1}
-	<div id="myPopup" class="popup {isPopupVisible1 ? 'show-popup' : ''}">
+	<div id="myPopup" class="popup show-popup">
 		<div class="popup-content">
 			<div class="header-card">
 				<h2>Términos y Condiciones</h2>
