@@ -14,7 +14,7 @@
 		Por favor ingresa el Correo Electrónico con el que iniciaste sesión en Draw This
 	</p>
 	<br />
-	<form method="post">
+	<form action="/olvido-contraseña">
 		<div class="input-group">
 			<label class="label" for="">Correo Electrónico</label>
 			<input
@@ -28,9 +28,7 @@
 		</div>
 		<br />
 		<div class="actions">
-			<a href="/olvido-contraseña" data-sveltekit-reload data-sveltekit-preload-data="tap">
-				<button class="enviar">Enviar</button>
-			</a>
+			<button class="enviar">Enviar</button>
 		</div>
 	</form>
 </div>

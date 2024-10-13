@@ -9,17 +9,6 @@ export const users = sqliteTable("users", {
 	registrationDate: numeric("registration_date").default(sql`(datetime('now', '-5 hours'))`),
 });
 
-export const contact = sqliteTable("contact", {
-	id: integer("id").primaryKey(),
-	firstName: text("first_name").notNull(),
-	secondName: text("second_name"),
-	lastName: text("last_name").notNull(),
-	gender: text("gender").notNull(),
-	email: text("email").notNull(),
-	age: numeric("age").notNull(),
-	deliveryDate: numeric("delivery_date").default(sql`(datetime('now', '-5 hours'))`),
-});
-
 export const themes = sqliteTable("themes", {
 	id: integer("id").primaryKey(),
 	historia: text("historia"),

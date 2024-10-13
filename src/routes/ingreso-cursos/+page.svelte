@@ -54,8 +54,6 @@
 				</div>
 
 				<div class="side-menu" class:open={menuOpen}>
-					<a href="#contact">Contacto</a>
-					<a href="#support">Soporte</a>
 					<a href="#privacy">Privacidad</a>
 					<a href="../HTML/landing page.html">Volver</a>
 				</div>

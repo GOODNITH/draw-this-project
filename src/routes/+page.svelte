@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
 	import '$lib/CSS/inicio.css';
 	import logo from '$lib/IMAGES/IMG-20231013-WA0009.jpg';
 
@@ -63,7 +62,7 @@
 					placeholder="Password123"
 					required
 					minlength="4"
-					maxlength="12"
+					maxlength="25"
 					id="passwordInput1"
 				/>
 				<button
@@ -131,7 +130,7 @@
 					placeholder="Password123"
 					required
 					minlength="4"
-					maxlength="12"
+					maxlength="25"
 					id="registerPasswordInput"
 				/>
 				<button

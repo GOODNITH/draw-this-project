@@ -91,7 +91,7 @@
 	</li>
 	<li>
 		<h2>Sebastián Arévalo Pérez</h2>
-		<h4>Diseñador</h4>
+		<h4>Programador</h4>
 	</li>
 </ul>
 <br />

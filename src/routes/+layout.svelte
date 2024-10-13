@@ -1,6 +1,5 @@
 <script>
 	import { onMount } from 'svelte';
-
 	// PANTALLA DE CARGA
 	let isLoading = true;
 
@@ -28,7 +27,7 @@
 		align-items: center;
 		z-index: 9999;
 	}
-
+	
 	#loading-spinner {
 		border: 8px solid #f3f3f3;
 		border-top: 8px solid #3498db;

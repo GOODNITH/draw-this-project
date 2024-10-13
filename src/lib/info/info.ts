@@ -7,7 +7,7 @@ import {
 } from '$lib/IMAGES/todas';
 
 export let courses = [
-    { title: 'Historia del Arte', description: 'Aprende técnicas de pintura.', link: '../Curso/1/Nivel/1/Historia_Arte.html' },
+    { title: 'Historia del Arte', description: 'Aprende técnicas de pintura.', link: '/curso/1/nivel/1' },
     { title: 'Dibujo Simple (Básico)', description: 'Domina el arte de dibujar en varios estilos.', link: '#' },
     { title: 'Puntillismo', description: 'Domina el arte del puntillismo.', link: '../HTML/puntillismo.html' },
     { title: 'Pixel Art', description: 'Domina el arte de dibujar con pixeles.', link: '../HTML/tamgram.html' },

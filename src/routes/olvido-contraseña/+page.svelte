@@ -44,7 +44,7 @@
     <header></header>
     <h2>Introduce el código</h2>
     <p>Hemos enviado un código para recuperar tu contraseña</p>
-    <form method="post">
+    <form action="/contraseña-verificada">
         <div class="input-field">
             {#each inputs as input, index}
                 <input

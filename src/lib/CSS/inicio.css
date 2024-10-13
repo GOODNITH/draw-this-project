@@ -238,7 +238,6 @@ input[type="checkbox"] {
   top: 0;
   height: 100%;
   transition: all 0.5s ease-in-out;
-  border-right: 2px solid black;
 }
 
 .login-container {
@@ -256,7 +255,6 @@ input[type="checkbox"] {
   width: 50%;
   opacity: 0;
   z-index: 1;
-  border-left: 3px solid black;
 }
 
 .container.right-panel-active .register-container {

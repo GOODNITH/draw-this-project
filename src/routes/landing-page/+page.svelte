@@ -12,7 +12,6 @@
 		image1,
 		image2,
 		image3,
-		footer
 	} from '$lib/IMAGES/todas';
 	import { slides } from '$lib/info/info';
 
@@ -41,14 +40,20 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Conoce y Descubre más de Draw This</title>
+	<link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" />
+	<link
+		rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+	/>
 </svelte:head>
 
 <div class="menu-container">
 	<nav>
 		<img src={logo} alt="" class="logo" />
 		<ul class="menu">
-			<li><a href="/cursos" data-sveltekit-reload data-sveltekit-preload-data="tap">Cursos</a></li>
-			<li><a href="/contacto" data-sveltekit-preload-data="tap">Contacto</a></li>
+			<li><a href="/ingreso-cursos" data-sveltekit-reload data-sveltekit-preload-data="tap">Cursos</a></li>
+			<li><a href="#contact" data-sveltekit-preload-data="tap">Contacto</a></li>
 			<li>
 				<a href="/acerca-de" data-sveltekit-reload data-sveltekit-preload-data="tap">Acerca de</a>
 			</li>
@@ -91,7 +96,7 @@
 			<p>¡La Página que sacará tus dotes<br /> artísticos y los pondra a prueba!</p>
 			<br />
 			<br />
-			<a href="/cursos" data-sveltekit-reload data-sveltekit-preload-data="tap">
+			<a href="/ingreso-cursos" data-sveltekit-reload data-sveltekit-preload-data="tap">
 				<button type="button" class="enviar-2">Ingresa a los Cursos</button>
 			</a>
 		</div>
@@ -240,13 +245,36 @@
 	</section>
 </main>
 
-<footer>
-	<div id="footer">
-		<div class="contenedor">
-			<div class="footer-texto">
-				<p>Todos los derechos reservados a:</p>
-				<img src={footer} alt="Footer logo" />
-			</div>
+<footer id="contact">
+	<div class="footer-content">
+		<div class="contact-info">
+			<h3>Contacto</h3>
+			<p><i class="bx bxl-gmail"></i> drawthis6@gmail.com</p>
+			<br>
+			<p class="text-2">Todos los mensajes que se envien serán solo leidos por el equipo de Draw This, por favor no compartas información personal como contraseñas, direcciones, tarjetas de crédito, edad, etc.</p>
+			<p class="text-2">Draw this no se hace responsable por robos de información personal, debido a que tu mensaje pasa por un dominio de terceros.</p>
+			<p class="text-2">Gracias.</p>
+			<p class="text-2" style="font-weight: 600">-El equipo de Draw This</p>
+		</div>
+
+		<div class="contact-form">
+			<h3>Envíanos un mensaje</h3>
+			<form action="https://formsubmit.co/drawthis6@gmail.com" method="POST">
+				<div>
+					<label for="name">Nombre:</label>
+					<input type="text" id="name" name="name" placeholder="User123" required />
+				</div>
+				<div>
+					<label for="email">Correo:</label>
+					<input type="email" id="email" name="email" placeholder="example123@gmail.com" required />
+				</div>
+				<div>
+					<label for="message">Mensaje:</label>
+					<textarea id="message" name="message" placeholder="Escribe tu mensaje aquí" required
+					></textarea>
+				</div>
+				<button type="submit" class="send">Enviar</button>
+			</form>
 		</div>
 	</div>
 </footer>
