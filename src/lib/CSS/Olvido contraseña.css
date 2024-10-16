@@ -107,8 +107,10 @@ form .input-field input::-webkit-outer-spin-button {
 }
 
 .enviar {
-  opacity: 0.5; /* Opacidad baja cuando no está activo */
+  opacity: 0.5; 
   cursor: not-allowed;
+  text-align: center;
+  text-decoration: none;
   margin: 28px;
   width: 100%;
   border: 2px solid black;

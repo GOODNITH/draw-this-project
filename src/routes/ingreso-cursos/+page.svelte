@@ -55,7 +55,7 @@
 
 				<div class="side-menu" class:open={menuOpen}>
 					<a href="#privacy">Privacidad</a>
-					<a href="../HTML/landing page.html">Volver</a>
+					<a href="/landing-page" data-sveltekit-reload data-sveltekit-preload-data="tap">Volver</a>
 				</div>
 			</div>
 		</nav>

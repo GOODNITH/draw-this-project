@@ -14,7 +14,7 @@ export const themes = sqliteTable("themes", {
 	historia: text("historia"),
 	dibujo: text("dibujo"),
 	puntillismo: text("puntillismo"),
-	tangram: text("tangram"),
+	pixelart: text("pixelart"),
 	perspectiva: text("perspectiva"),
 	anatomia: text("anatomia"),
 	creatividad: text("creatividad"),
