@@ -6,11 +6,3 @@ export const actions = {
     }
 }
 
-import { db } from '$lib/server/database/connection';
-import { users } from '$lib/server/database/data';
-
-export async function load() {
-    const usuarios = await db.select().from(users);
-    console.log(usuarios)
-    return { usuarios };
-}
