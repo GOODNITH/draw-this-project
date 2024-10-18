@@ -156,28 +156,33 @@ button.ghost i{
 
 }
 
-button.ghost i.register{
+button.ghost .register{
   right: 70px;
   padding: 4px;
 }
 
-button.ghost i.login{
+button.ghost .login{
   padding: 4px;
   left: 70px;
 }
 
-button.ghost:hover i.register{
+button.ghost:hover .register{
   right: 40px;
   opacity: 1;
 }
 
-button.ghost:hover i.login{
+button.ghost:hover .login{
   left: 40px;
   opacity: 1;
 }
 
 button.ghost:hover {
   letter-spacing: 3px;
+}
+
+.a {
+  position: relative;
+  top: 3px;
 }
 
 form {
@@ -366,25 +371,46 @@ input[type="checkbox"] {
   width: 560px;
 }
 
-.input-box i {
+.input-box .i {
   position: absolute;
   top: 50%;
   transform: translateY(-42%);
   right: 16px; 
+  font-size: 1.2em;
+  color: black
 }
 
 .input-box button {
   position: absolute;
   outline: none;
-  font-size: 15px;
+  font-size: 1.2em;
+  color: black;
   border: none;
   top: 50%;
   transform: translateY(-42%);
   right: 10px;
 }
 
+.line {
+  display: inline-flex;
+  align-items: center;
+}
+
+.line::before,
+.line::after {
+  content: "ㅤㅤㅤㅤㅤ";
+  flex: 1;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.562); 
+  margin: 0 8px; 
+}
+
 .social-container {
   margin: 13px 0;
+}
+
+.e {
+  font-size: 1.5em;
 }
 
 .social-container a {
@@ -452,16 +478,16 @@ img {
   left: 12px;
 }
 
-.fa-eye-slash, .fa-eye {
+.watch-off, .watch {
   transition: 0.2s ease-in-out;
 }
 
-.fa-eye-slash:hover {
+.watch-off:hover {
   color: #ff0000;
 }
 
-.fa-eye:hover {
-  color: #04ff04;
+.watch:hover {
+  color: #15b615;
 }
 
 .popup {

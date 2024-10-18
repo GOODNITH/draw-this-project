@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '$lib/CSS/inicio.css';
 	import logo from '$lib/IMAGES/IMG-20231013-WA0009.jpg';
+	import Icon from '@iconify/svelte';
 
 	let isPopupVisible1 = false;
 	let Terms = false;
@@ -37,9 +38,6 @@
 
 <svelte:head>
 	<title>Bienvenido a Draw This</title>
-	<link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
-	<link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </svelte:head>
 
 <div class="container" class:right-panel-active={rightPanelActive}>
@@ -50,7 +48,7 @@
 			<div class="input-box">
 				<label class="input-label" for="emailInput">Correo Electrónico</label>
 				<input type="email" name="email" placeholder="example@gmail.com" required id="emailInput" />
-				<i class="bx bxl-gmail"></i>
+				<Icon icon="line-md:email-alt-twotone" class="i" />
 			</div>
 
 			<div class="input-box">
@@ -67,11 +65,13 @@
 				/>
 				<button
 					type="button"
-					class={passwordType1 === 'password' ? 'far fa-eye-slash' : 'far fa-eye'}
+					class={passwordType1 === 'password' ? 'watch-off' : 'watch'}
 					on:click={() => togglePassword(1)}
 					aria-label="Toggle password visibility"
 					on:keypress={(e) => e.key === 'Enter' && togglePassword(1)}
-				></button>
+					><Icon
+						icon={passwordType1 === 'password' ? 'line-md:watch-off' : 'line-md:watch'}
+					/></button>
 			</div>
 			<div class="content">
 				<div class="checkbox">
@@ -79,13 +79,15 @@
 					<label for="checkbox">Recuerdame</label>
 				</div>
 				<div class="pass-link">
-					<a href="/peticion-correo" data-sveltekit-reload data-sveltekit-preload-data="tap">Olvidaste tu Contraseña?</a>
+					<a href="/peticion-correo" data-sveltekit-reload data-sveltekit-preload-data="tap"
+						>Olvidaste tu Contraseña?</a
+					>
 				</div>
 			</div>
 			<button class="send">Inicio</button>
-			<span>Ó usa tu cuenta</span>
+			<span class="line">Ó</span>
 			<div class="social-container">
-				<a href="#google" class="social"><i class="lni lni-google"></i>ㅤCuenta de Google</a>
+				<a href="#incognito" class="social"><Icon icon="line-md:person-search-filled" class="e"/>ㅤModo Incógnito</a>
 			</div>
 			<p class="draw">DrawThis <span>© 2024</span></p>
 		</form>
@@ -106,7 +108,7 @@
 					maxlength="20"
 					id="usernameInput"
 				/>
-				<i class="bx bxs-user" aria-hidden="true"></i>
+				<Icon icon="line-md:person-twotone" class="i" />
 			</div>
 
 			<div class="input-box">
@@ -118,7 +120,7 @@
 					required
 					id="registerEmailInput"
 				/>
-				<i class="bx bxl-gmail" aria-hidden="true"></i>
+				<Icon icon="line-md:email-alt-twotone" class="i" />
 			</div>
 
 			<div class="input-box">
@@ -135,19 +137,20 @@
 				/>
 				<button
 					type="button"
-					class={passwordType2 === 'password' ? 'far fa-eye-slash' : 'far fa-eye'}
+					class={passwordType2 === 'password' ? 'watch-off' : 'watch'}
 					on:click={() => togglePassword(2)}
 					aria-label="Toggle password visibility"
 					on:keypress={(e) => e.key === 'Enter' && togglePassword(2)}
-				></button>
+					><Icon
+						icon={passwordType2 === 'password' ? 'line-md:watch-off' : 'line-md:watch'}
+					/></button>
 			</div>
 
 			<div class="terms-checkbox">
 				<input type="checkbox" id="terms-checkbox" required bind:checked={Terms} />
 				<label for="terms-checkbox"></label>
 				<span class="small-text">Acepto los</span><a href="#terms" on:click={togglePopup1}
-					>Términos y Condiciones</a
-				>
+					>Términos y Condiciones</a>
 			</div>
 			<button class="send">Registro</button>
 			<p class="draw">DrawThis <span>© 2024</span></p>
@@ -160,8 +163,8 @@
 				<h1 class="title">Bienvenido a <br /> Draw This</h1>
 				<p>Sí ya tienes una cuenta, inicia sesión aquí</p>
 				<button class="ghost" on:click={login}>
+					<Icon icon="line-md:chevron-small-triple-left" class="a"/>
 					Inicia
-					<i class="lni lni-arrow-left login"></i>
 				</button>
 			</div>
 			<div class="overlay-panel overlay-right">
@@ -169,7 +172,7 @@
 				<p>Sí no tienes una cuenta, regístrate aquí</p>
 				<button class="ghost" on:click={register}>
 					Registrarse
-					<i class="lni lni-arrow-right register"></i>
+					<Icon icon="line-md:chevron-small-triple-right" class="a" />
 				</button>
 			</div>
 		</div>

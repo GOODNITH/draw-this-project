@@ -11,9 +11,10 @@
 		number3,
 		image1,
 		image2,
-		image3,
+		image3
 	} from '$lib/IMAGES/todas';
 	import { slides } from '$lib/info/info';
+	import Icon from '@iconify/svelte';
 
 	let currentSlide = 3;
 
@@ -52,7 +53,9 @@
 	<nav>
 		<img src={logo} alt="" class="logo" />
 		<ul class="menu">
-			<li><a href="/ingreso-cursos" data-sveltekit-reload data-sveltekit-preload-data="tap">Cursos</a></li>
+			<li>
+				<a href="/ingreso-cursos" data-sveltekit-reload data-sveltekit-preload-data="tap">Cursos</a>
+			</li>
 			<li><a href="#contact" data-sveltekit-preload-data="tap">Contacto</a></li>
 			<li>
 				<a href="/acerca-de" data-sveltekit-reload data-sveltekit-preload-data="tap">Acerca de</a>
@@ -124,12 +127,29 @@
 			transformador del arte mientras aprendes. ¡En esta travesía creativa cada dibujo cuenta una
 			historia única!
 		</p>
+
+		<br>
+		<br>
+
+		<div class="info-container">
+			<div class="info-box">
+				<Icon icon="uis:layer-group" class="info-logo" />
+				<p class="info-text">Más de 50 niveles disponibles</p>
+			</div>
+			<div class="info-box">
+				<Icon icon="uis:clock-three" class="info-logo" />
+				<p class="info-text">Más de 5 horas de contenido</p>
+			</div>
+			<div class="info-box">
+				<Icon icon="gridicons:thumbs-up" class="info-logo" />
+				<p class="info-text">No son necesarios conocimientos previos</p>
+			</div>
+		</div>
+
 		<h2 class="text">Ventajas al usar Draw This</h2>
 		<div class="cards">
 			<div class="card">
-				<div class="circle">
-					<img src={logo1} alt="" />
-				</div>
+				<Icon icon="mingcute:chess-fill" class="info" />
 				<h3>Expresión personal y creatividad</h3>
 				<p>
 					El dibujo es una forma de expresión artística que permite a las personas transmitir sus
@@ -137,9 +157,7 @@
 				</p>
 			</div>
 			<div class="card">
-				<div class="circle">
-					<img src={logo2} alt="" />
-				</div>
+				<Icon icon="mingcute:emoji-fill" class="info" />
 				<h3>Alivio del estrés y mejora del bienestar emocional</h3>
 				<p>
 					Dibujar puede servir como una forma de escape, permitiendo a las personas desconectarse
@@ -147,9 +165,7 @@
 				</p>
 			</div>
 			<div class="card">
-				<div class="circle">
-					<img src={logo3} alt="" />
-				</div>
+				<Icon icon="ri:brain-2-fill" class="info" />
 				<h3>Estimulación cognitiva</h3>
 				<p>
 					Dibujar implica la coordinación entre la mano y el ojo, lo que ayuda a desarrollar y
@@ -250,9 +266,16 @@
 		<div class="contact-info">
 			<h3>Contacto</h3>
 			<p><i class="bx bxl-gmail"></i> drawthis6@gmail.com</p>
-			<br>
-			<p class="text-2">Todos los mensajes que se envien serán solo leidos por el equipo de Draw This, por favor no compartas información personal como contraseñas, direcciones, tarjetas de crédito, edad, etc.</p>
-			<p class="text-2">Draw this no se hace responsable por robos de información personal, debido a que tu mensaje pasa por un dominio de terceros.</p>
+			<br />
+			<p class="text-2">
+				Todos los mensajes que se envien serán solo leidos por el equipo de Draw This, por favor no
+				compartas información personal como contraseñas, direcciones, tarjetas de crédito, edad,
+				etc.
+			</p>
+			<p class="text-2">
+				Draw this no se hace responsable por robos de información personal, debido a que tu mensaje
+				pasa por un dominio de terceros.
+			</p>
 			<p class="text-2">Gracias.</p>
 			<p class="text-2" style="font-weight: 600">-El equipo de Draw This</p>
 		</div>
