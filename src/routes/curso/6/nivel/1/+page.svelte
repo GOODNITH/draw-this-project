@@ -12,19 +12,19 @@
 <svelte:head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Historia del Arte</title>
+	<title>Anatomia humana</title>
 </svelte:head>
 
 <Nav levelNumber={1} position="rombo-1" />
 
 <div class="container">
 	<div class="header">
-		<h1>Vídeo: Introducción a la Historia del Arte</h1>
+		<h1>Vídeo: Introducción a la anatomia humana </h1>
 	</div>
 	<div class="video-container">
 		<iframe
 			title=""
-			src="https://www.youtube.com/embed/rUHxLrZwSIY"
+			src="https://www.youtube.com/embed/ccwQKHjPHg0"
 			frameborder="0"
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 			allowfullscreen

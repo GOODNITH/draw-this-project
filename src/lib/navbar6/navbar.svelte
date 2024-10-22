@@ -11,7 +11,7 @@
 	const elements = [
 		{
 			id: 'rombo-1',
-			text: '1. Video: Introducción a la Historia del Arte',
+			text: '1. Video: Introducción a la anatomia humana',
 			link: './1'
 		},
 		{

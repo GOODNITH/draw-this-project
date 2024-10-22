@@ -133,6 +133,7 @@ button.custom-button:hover::after {
 
 .header-texto p {
   font-size: 20px;
+  text-align: left;
 }
 
 .header-texto span {
@@ -347,6 +348,7 @@ main {
 }
 
 .info-box {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -650,6 +652,7 @@ footer {
 .contact-form textarea {
   height: 100px;
 }
+
 .send {
   position: relative;
   left: 35px;

@@ -16,12 +16,12 @@
 		},
 		{
 			id: 'circle-1',
-			text: '2. Desarrollo: El Arte Prehistórico',
+			text: '2. Desarrollo: El Dibujo Básico',
 			link: './2'
 		},
 		{
 			id: 'square-1',
-			text: '3. Desafío: Realización de Arte Prehistórico',
+			text: '3. Desafío: Realización de Dibujo Básico',
 			link: './3'
 		},
 		{

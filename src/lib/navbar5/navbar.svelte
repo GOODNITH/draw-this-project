@@ -11,7 +11,7 @@
 	const elements = [
 		{
 			id: 'rombo-1',
-			text: '1. Video: Introducción a la Historia del Arte',
+			text: '1. Video: Introducción a la prespectiva',
 			link: './1'
 		},
 		{
@@ -26,7 +26,7 @@
 		},
 		{
 			id: 'rombo-2',
-			text: '4. Vídeo: Arte Prehistórico, Antiguo y Clásico',
+			text: '4. Vídeo: tipos de prespectivas',
 			link: './4'
 		},
 		{

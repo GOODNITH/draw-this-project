@@ -52,7 +52,7 @@
         <div bind:this={slides[1]} class="slide">
             <img src={img1} class="slide-img" alt="" />
             <div class="text-overlay">
-                <strong>Catedral de Notre-Dame de París (Francia, siglo XII-XIV):</strong> La Catedral de Notre-Dame es uno de los máximos exponentes de la arquitectura gótica. Situada en el corazón de París, fue construida entre los siglos XII y XIV, siendo conocida por su impresionante fachada occidental, sus altas torres gemelas y el uso <br /> innovador de los arbotantes, que permitieron elevar la estructura y llenar los interiores con luz a través de sus enormes vitrales.
+                <strong>Catedral de Notre-Dame de París (Francia, siglo XII-XIV):</strong> La Catedral de Notre-Dame es uno de los máximos exponentes de la arquitectura gótica. Situada <br> en el corazón de París, fue construida entre los siglos XII y XIV, siendo conocida por su impresionante fachada occidental, sus altas torres gemelas y el uso <br /> innovador de los arbotantes, que permitieron elevar la estructura y llenar los interiores con luz a través de sus enormes vitrales.
             </div>
         </div>
 

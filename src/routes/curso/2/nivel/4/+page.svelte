@@ -1,6 +1,6 @@
 <script lang="ts">
 	import './nivel4.css';
-	import Nav from '$lib/navbar1/navbar.svelte';
+	import Nav from '$lib/navbar2/navbar.svelte';
 	import Next from '$lib/button.svelte';
 	import { onMount } from 'svelte';
 
@@ -12,7 +12,7 @@
 <svelte:head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Historia del Arte</title>
+	<title>Dibujo Básico</title>
 </svelte:head>
 
 <Nav levelNumber={4} position="rombo-2" />

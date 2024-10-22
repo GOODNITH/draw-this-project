@@ -134,11 +134,11 @@
 		<div class="info-container">
 			<div class="info-box">
 				<Icon icon="uis:layer-group" class="info-logo" />
-				<p class="info-text">Más de 50 niveles disponibles</p>
+				<p class="info-text">Más de 50 niveles disponibles para todos</p>
 			</div>
 			<div class="info-box">
 				<Icon icon="uis:clock-three" class="info-logo" />
-				<p class="info-text">Más de 5 horas de contenido</p>
+				<p class="info-text">Más de 5 horas de contenido para dibujar</p>
 			</div>
 			<div class="info-box">
 				<Icon icon="gridicons:thumbs-up" class="info-logo" />
